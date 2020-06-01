@@ -1,23 +1,17 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { Flex,Box } from "@chakra-ui/core";
+import LeftSideBar from './leftSideBar'
+import RightSideBar from './rightSideBar'
 
 
 const Layout = ({ children }) => {
-
-
   return (
-    <>
-        <main>{children}</main>
-    </>
-  )
-}
+    <Flex minH="200vh">
+      <LeftSideBar/>
+      <Box bg='#E9D8FD' w='80%'>{children}</Box>
+      <RightSideBar/>
+    </Flex>
+  );
+};
 
-
-export default Layout
+export default Layout;

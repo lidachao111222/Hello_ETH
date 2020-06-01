@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `你好以太坊`,
+    title: `你好，以太坊`,
     description: `欢迎登陆 Eth Land 以太坊之境！（内容持续完善中）`,
     author: `@ecn`,
   },
