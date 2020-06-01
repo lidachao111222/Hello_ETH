@@ -1,56 +1,33 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
 
-// You can delete this file if you're not using it
-const path = require(`path`);
+exports.createPages = ({actions, graphql}) => {
 
-const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
-  // Query for article nodes to use in creating pages.
-  resolve(
-    graphql(request).then(result => {
-      if (result.errors) {
-        reject(result.errors)
-      }
+  const { createPage } = actions
 
-      return result;
-    })
-  )
-});
-
-
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
-exports.createPages = ({ boundActionCreators, graphql }) => {
-    const { createPage } = boundActionCreators;
-  
-    const getBeginners = makeRequest(graphql, `
-      {
-        allStrapiBeginners {
-          edges {
-            node {
-              id
-            }
-          }
+  return graphql(`
+  {
+    allStrapiBeginners {
+      edges {
+        node {
+          path
         }
       }
-      `).then(result => {
-      // Create pages for each article.
-      result.data.allStrapiBeginners.edges.forEach(({ node }) => {
-        createPage({
-          path: `/${node.id}`,
-          component: path.resolve(`src/templates/beginners.js`),
-          context: {
-            id: node.id,
-          },
-        })
+    }
+  }
+  `).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Create blog post pages.
+    result.data.allStrapiBeginners.edges.forEach(({ node }) => {
+      createPage({
+        path:  `${node.path}`,
+        component: path.resolve(`src/templates/beginners.js`),
+        context: {
+          id: node.path,
+        },
       })
-    });
-  
-    // Queries for articles and authors nodes to use in creating pages.
-    return Promise.all([
-        getBeginners,
-    ])
-  };
+    })
+  })
+}
