@@ -4,6 +4,7 @@ exports.createPages = ({actions, graphql}) => {
 
   const { createPage } = actions
 
+
   return graphql(`
   {
     allStrapiBeginners {
