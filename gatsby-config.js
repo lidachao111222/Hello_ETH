@@ -5,6 +5,7 @@ module.exports = {
     author: `@ecn`,
   },
   plugins: [
+    `gatsby-plugin-chakra-ui`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
