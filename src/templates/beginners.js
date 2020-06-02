@@ -1,14 +1,14 @@
 import React from "react";
 import { graphql } from 'gatsby'
 import Layout from "../components/layout";
+var Markdown = require('react-markdown');
+
 
 const Beginners = ({ data }) => {
-
-
   return (
     <Layout>
       <div>
-        {data.strapiBeginners.content}
+        <Markdown source={data.strapiBeginners.content}  />
       </div>
     </Layout>
   );
