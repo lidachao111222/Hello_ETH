@@ -7,9 +7,9 @@ const Beginners = ({ data }) => {
 
   return (
     <Layout>
-      {/* <h1>{data.strapiBeginners.title}</h1>
-      <p>{data.strapiBeginners.content}</p> */}
-      {console.log(data)}
+      <div>
+        {data.strapiBeginners.content}
+      </div>
     </Layout>
   );
 };

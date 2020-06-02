@@ -11,6 +11,7 @@ exports.createPages = ({actions, graphql}) => {
       edges {
         node {
           path
+          id
         }
       }
     }
@@ -26,7 +27,7 @@ exports.createPages = ({actions, graphql}) => {
         path:  `${node.path}`,
         component: path.resolve(`src/templates/beginners.js`),
         context: {
-          id: node.path,
+          id: node.id,
         },
       })
     })
