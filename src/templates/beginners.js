@@ -1,15 +1,16 @@
 import React from "react";
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
-var Markdown = require('react-markdown');
-
+import ReactMarkdown from "react-markdown";
+import Toc from "react-auto-toc";
 
 const Beginners = ({ data }) => {
   return (
     <Layout>
       <div>
-        <Markdown source={data.strapiBeginners.content}  />
+        <ReactMarkdown source={data.strapiBeginners.content} />
       </div>
+      <Toc markdownText={data.strapiBeginners.content} />
     </Layout>
   );
 };
@@ -18,9 +19,9 @@ export default Beginners;
 
 export const query = graphql`
   query BeginnersTemplate($id: String!) {
-    strapiBeginners(id: {eq: $id}) {
+    strapiBeginners(id: { eq: $id }) {
       title
       content
     }
   }
-`
+`;
