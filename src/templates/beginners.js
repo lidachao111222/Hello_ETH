@@ -3,14 +3,17 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import ReactMarkdown from "react-markdown";
 import Toc from "react-auto-toc";
+import "github-markdown-css";
 
 const Beginners = ({ data }) => {
   return (
     <Layout>
-      <div>
+      <div className="markdown-body">
         <ReactMarkdown source={data.strapiBeginners.content} />
       </div>
-      <Toc markdownText={data.strapiBeginners.content} />
+
+        <Toc markdownText={data.strapiBeginners.content} />
+
     </Layout>
   );
 };
