@@ -31,9 +31,7 @@ const Layout = ({ children}) => {
         >
           {navVisible ? "文章目录 →" : "←文章目录"}
         </div>
-      
         <MarkdownNavbar source={children.props&&children.props.children.props.source} />
-
       </div>
     </Flex>
   );
