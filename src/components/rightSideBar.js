@@ -3,7 +3,7 @@ import { Box,Icon } from "@chakra-ui/core";
 
 const rightSideBar = () => {
   return (
-    <Box bg="#C4F1F9" w={["5%", "5%", "20%", "20%"]}>
+    <Box  w={["5%", "5%", "20%", "20%"]}>
       <Icon
         name="drag-handle"
         visibility={["visible", "visible", "hidden", "hidden"]}

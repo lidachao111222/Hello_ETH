@@ -53,7 +53,7 @@ export class MarkdownNavbar extends Component {
       this.setState({
         currentListNo: '',
       });
-      const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      const headings = document.querySelectorAll('h1, h2');
       Array.prototype.slice.apply(headings).forEach(h => (h.dataset.id = ''));
 
       this.scrollEventLockTimer = setTimeout(() => {
