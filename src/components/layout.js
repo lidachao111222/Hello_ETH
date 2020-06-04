@@ -29,7 +29,7 @@ const Layout = ({ children}) => {
             setNavVisible(!navVisible);
           }}
         >
-          {navVisible ? "MENU →" : "← MENU"}
+          {navVisible ? "文章目录 →" : "←文章目录"}
         </div>
       
         <MarkdownNavbar source={children.props&&children.props.children.props.source} />
