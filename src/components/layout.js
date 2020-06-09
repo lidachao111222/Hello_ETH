@@ -15,7 +15,6 @@ const Layout = ({ children}) => {
         mx="auto"
         py="20px"
         px="40px"
-        boxShadow="0 0 8px rgba(0,0,0,0.1)"
         onClick={() => {
           setNavVisible(false);
         }}

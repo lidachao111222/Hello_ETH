@@ -16,7 +16,6 @@
 }
 
 .toggle-btn {
-  z-index: 2000;
   position: absolute;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.6);
